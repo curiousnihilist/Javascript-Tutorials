@@ -1,16 +1,28 @@
-var bills = [100,500,900];
+function Button(value) {
+    this.value = value;
+    this.onClick_1 = function () {
+        console.log(this.value);
+    };
+    this.onClick_2 = () => {
+        console.log(this.value);
+    };
+};
+    
+let button_1 = new Button("OK");
+let button_2 = { value: 'Cancel' };
 
-var calcTip = function(bill){
-    if(bill<200){
-        return bill*0.3;
-    } else if (bill>=200 && bill<=800){
-        return bill*0.2;
-    } else {
-        return bill*0.15;
-    }
-}
 
-var tips = bills.map(bill => calcTip(bill))
-console.log(tips);
+// console.log(button_1);
+// console.log(button_2);
+    
+button_2.onClick_1 = button_1.onClick_1;
+button_2.onClick_2 = button_1.onClick_2;
 
-var total = bills.map(bill => bill)
+// console.log(button_1);
+// console.log(button_2);
+
+button_1.onClick_1(); // console >> "OK"- it's clear for me
+button_1.onClick_2(); // console >> "OK" - Why "OK" not "undefined"
+
+button_2.onClick_1(); // console >> "Cancel"- it's clear for me
+button_2.onClick_2(); // console >> "OK" - Why "OK" not "undefined" or "Cancel"

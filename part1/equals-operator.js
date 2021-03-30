@@ -9,3 +9,9 @@ var b = '18';
 
 console.log(a == b);
 console.log(a === b);
+
+var myName = "akash";
+var sName = new String("akash")
+
+console.log(myName == sName); // true - value checking
+console.log(myName === sName); //false - value and type checking (since object and primitive are not of same type )
