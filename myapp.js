@@ -26,3 +26,40 @@ button_1.onClick_2(); // console >> "OK" - Why "OK" not "undefined"
 
 button_2.onClick_1(); // console >> "Cancel"- it's clear for me
 button_2.onClick_2(); // console >> "OK" - Why "OK" not "undefined" or "Cancel"
+
+
+
+console.log(Array.from("foo"));
+console.log(Array.from([1,2,3,4,5]));
+console.log(Array.from({
+    name:"Akash", age:25
+}));
+
+let user = {
+    name: "John",
+    years: 30
+};
+
+var {name, years:age, isAdmin: isAdmin=false} = user;
+console.log(`${name}, ${age}, ${isAdmin}`);
+
+let salaries = {
+    "John": 100,
+    "Pete": 300,
+    "Mary": 250
+};
+
+function topSalary(salaries){
+
+    Object.entries(salaries).map(
+        ([key,value]) => {
+            highest = Number.MIN_SAFE_INTEGER
+        }
+    );
+
+    // salaries.entries(([key,value]) => {
+    //     console.log(`${key}:${value}`)
+    // })
+}
+
+topSalary(salaries);

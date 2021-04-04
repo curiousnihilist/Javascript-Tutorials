@@ -1,1 +1,1 @@
-link: https://javascript.info/symbol
+//link: https://javascript.info/symbol

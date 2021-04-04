@@ -125,3 +125,11 @@ function run(array,method){
     months = temp;
     temp = null;
 }
+
+/*
+Useful method
+
+1. Array.from(iterable,mapFunction,thisArg)
+    Returns a new array from specified iterable like objects
+*/
+
