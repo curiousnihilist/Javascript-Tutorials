@@ -3,14 +3,24 @@ We can define methods inside an object in JS. methods are like actions which an 
 In order to peform actions/access those methods, object can require some of it's own data.
 
 This issue is resolved by this operator, which holds the current object context from which the method was called.
+The “this” keyword refers to the object that the function is a property of.
+The value of “this” keyword will always depend on the object that is invoking the function.
 */
 
 var user ={
     name:"Akash",
-    sayHi:function(){ console.log(`Hi, My name is ${this.name}`);}
+    sayHi:function(){ 
+        console.log(this);
+        console.log(`Hi, My name is ${this.name}`);
+    }
+}
+
+function globalFunc(){
+    console.log(this);              //Here this is a global object
 }
 
 user.sayHi();
+globalFunc();
 
 /*
 So here, since user object calls the method, this points to the user object.
