@@ -56,3 +56,24 @@ The F.prototype property (don’t mistake it for [[Prototype]]) sets [[Prototype
 The value of F.prototype should be either an object or null: other values won’t work.
 The "prototype" property only has such a special effect when set on a constructor function, and invoked with new.
 */
+
+
+/*
+It is important to understand the distinction between the way a prototype
+is associated with a constructor (through its prototype property) and the way
+objects have a prototype (which can be found with Object.getPrototypeOf).
+
+The actual prototype of a function (be it constructor function or normal one) is
+Function.ptototype.
+However, the prototype property of Function holds the prototype used for creating 
+object instances.
+*/
+
+function Rabbit(type){this.type = type}     // Constructor function
+                                            // It has a prortotype which is Function.prortotype because it's a function which we get from Object.getPrortotypeOf(Function)
+                                            // It's prortotype property is prototype for all objects made by it
+
+var killerRabbit = new Rabbit("killer");
+
+console.log(Object.getPrototypeOf(Rabbit) == Function.prototype);       //true
+console.log(Object.getPrototypeOf(killerRabbit) == Rabbit.prototype);   //true
